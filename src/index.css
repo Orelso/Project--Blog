@@ -1,10 +1,11 @@
-  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
 /* base styles */
 * {
   margin: 0;
   font-family: 'Caveat', cursive;
   color: #333;
 }
+/* ------------------------------------------------------------------------(NavBar styling)------------------------------------------------------------------------------------------*/
 .navbar {
   padding: 20px;
   display: flex;
@@ -29,22 +30,16 @@
 .navbar a:hover {
   color: #eb3b6777;
 }
-.content {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
+/* ------------------------------------------------------------------------(Styling for the entire Page )------------------------------------------------------------------------------------------*/
 .home {
   font-size: 45px;
   text-align: center;
-  margin-top: -70px;
 }
-
+/* ------------------------------------------------------------------------(Button styling)------------------------------------------------------------------------------------------*/
 button {
   background-color: #eb3b6777;
   border-radius: 25px;
-  width: 200px;
+  /* width: 200px; */
   justify-content: space-between;
   padding: 10px;
   margin-right: 5px;
@@ -56,7 +51,25 @@ button {
 button:hover {
   transform: scale(1.1);
 }
+/* ------------------------------------------------------------------------(Styling for the Home at the root App.js)------------------------------------------------------------------------------------------*/
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px
+}
+/* ------------------------------------------------------------------------(Blog data styling)------------------------------------------------------------------------------------------*/
+.blog-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid black;
+}
 
-.nameStyle {
-  color: #eb3b6777;
+.blog-preview:hover {
+  box-shadow: 1px 3px 5px black;
+}
+
+.blog-preview h1 {
+  font-size:  20px;
+  color: #333;
+  margin-bottom: 8px;
 }

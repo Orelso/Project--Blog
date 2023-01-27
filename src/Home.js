@@ -1,29 +1,27 @@
 import { useState } from "react";
 
 const Home = () => {
-  const [name, setName] = useState("Mario"); // Creates a storage for the name
-  const [age, setAge] = useState(25)
+  const [blogs, setBlogs] = useState([
+    {title: "Music", body: "lorem", author: "Orelso", id: 1},
+    {title: "Food", body: "lorem", author: "Sanni", id: 2},
+    {title: "Leisure", body: "lorem", author: "Irene", id: 3}
+  ])
 
   const handleClick = () => {
-    setName("Luigi"); // When setName is called inside the handleClick it changes the name to the NEW setName
-    setAge(100)
-  };
-
-  const handleClickAgain = () => {
-    setName('Orelso')
-    setAge(31)
-
-  };
+    setBlogs()
+  }
+ 
   return (
     <div className='home'>
-      <h1>Homepage</h1>
-      <p>
-        <span className="nameStyle">{name}</span> is {age} years old
-        </p>
-      <container>
-      <button onClick={handleClick}>Click me!</button>
-      <button onClick={() => handleClickAgain("mario")}>Click me again!</button>
-      </container>
+     <ul>
+        {blogs.map((blog) => (
+            <div className="blog-preview" key={blog.id}>
+                <h2>{blog.title}</h2>
+                <h3>{blog.body}</h3>
+                <p>{blog.author}</p>
+            </div>
+        ))}
+     </ul>
     </div>
   );
 };
