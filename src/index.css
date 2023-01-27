@@ -40,3 +40,23 @@
   text-align: center;
   margin-top: -70px;
 }
+
+button {
+  background-color: #eb3b6777;
+  border-radius: 25px;
+  width: 200px;
+  justify-content: space-between;
+  padding: 10px;
+  margin-right: 5px;
+  font-size: 15px;
+  box-shadow: 2px 2px 5px #888888;
+
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.nameStyle {
+  color: #eb3b6777;
+}
