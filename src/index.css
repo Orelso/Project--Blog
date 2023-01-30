@@ -73,3 +73,8 @@ button:hover {
   color: #333;
   margin-bottom: 8px;
 }
+
+p {
+  color: lightgrey;
+  font-size: 25px;
+}

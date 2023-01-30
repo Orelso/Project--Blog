@@ -1,0 +1,16 @@
+{
+    "blogs": [
+        {
+            "title": "My first blog",
+            "body": "Reprehenderit sint velit velit duis ipsum occaecat ullamco magna.",
+            "author": "James Brown",
+            "id": 1
+        },
+        {
+            "title": "NFL 101",
+            "body": "Reprehenderit sint velit velit duis ipsum occaecat ullamco magna.",
+            "author": "Orelso Vitam",
+            "id": 2
+        }
+    ]
+}
