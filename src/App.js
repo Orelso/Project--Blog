@@ -6,6 +6,7 @@ import Account from "./Account";
 import Info from "./Info";
 import BlogDetails from "./BlogDetails";
 
+//4 How to get from one page to the other. 
 function App() {
   return (
     <Router>

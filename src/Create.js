@@ -7,23 +7,24 @@ const Create = () => {
     const [author, setAuthor] = useState();
     const [isPending, setIsPending] = useState(false)
     const history = useHistory()
-
+/* ---------------------------------------------------------------------------------------------------------(Will handle the submitting of the new blog)----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
     const handleSubmit = (e) => {
         e.preventDefault()
         const blog = { title, body, author}
-
-        setIsPending(true)
+        setIsPending(true) //4 Will show the loading...
         fetch("http://localhost:8005/blogs", {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(blog)
         }).then(() => {
             console.log("NEW")
-            setIsPending(false)
-            history.push('/')
+            setIsPending(false) //4 Will remove the Loading...
+            history.push('/') //4 Will send us to the homepage after submitting
         })
     }
-  return (
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+//4 What's in the create page  
+return (
     <div className='create'>
       <h2>Add a New Blog</h2>
       <form onSubmit={handleSubmit}>
