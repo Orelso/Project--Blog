@@ -15,6 +15,9 @@ const Home = () => {
         setBlogs(data)
         setIsPending(false)
     })
+    .catch(err => {
+      console.log(err.message);
+    })
    }, 1000)
   }, []) //4 [] makes sure this useeffect only runs after the first initial render.
  
