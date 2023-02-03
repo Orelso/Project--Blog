@@ -9,6 +9,9 @@ const Home = () => {
    setTimeout(() => {
     fetch('http://localhost:8005/blogs')
     .then(res => {
+      if(!res.ok) {
+        throw Error('Could not fetch the data :(')
+      }
         return res.json()
     })
     .then((data) => {
