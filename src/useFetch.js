@@ -1,3 +1,4 @@
+import { logDOM } from "@testing-library/react";
 import { useEffect, useState } from "react";
 
 const useFetch = (url) => {
@@ -7,8 +8,9 @@ const useFetch = (url) => {
 
   useEffect(() => {
     //4 ran at every render.
+    const abort = new AbortController();
     setTimeout(() => {
-      fetch(url)
+      fetch(url, { signal: abort.signal })
         .then((res) => {
           if (!res.ok) {
             throw Error("Could not fetch the data :(");
@@ -21,13 +23,19 @@ const useFetch = (url) => {
           setError(null);
         })
         .catch((err) => {
-          setIsPending(false);
-          setError(err.message);
+          if (err.name === "AbortError") {
+            console.log("fetch aborted");
+          } else {
+            setIsPending(false);
+            setError(err.message);
+          }
         });
     }, 1000);
+
+    return () => abort.abort();
   }, [url]); //4 [] makes sure this useeffect only runs after the first initial render.
 
-  return {data, isPending, error}
+  return { data, isPending, error };
 };
 
 export default useFetch;
