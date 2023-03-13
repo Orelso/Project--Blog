@@ -1,4 +1,3 @@
-import { logDOM } from "@testing-library/react";
 import { useEffect, useState } from "react";
 
 const useFetch = (url) => {
@@ -6,7 +5,8 @@ const useFetch = (url) => {
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {//4 ran at every render.
+  useEffect(() => {
+    //4 ran at every render.
     const abort = new AbortController();
     setTimeout(() => {
       fetch(url, { signal: abort.signal })
